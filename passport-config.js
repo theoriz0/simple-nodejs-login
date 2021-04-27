@@ -1,7 +1,7 @@
 const LocalStrategy = require('passport-local')
 const bcrypt = require('bcrypt')
 
-export default function initialize(passport) {
+function initialize(passport) {
   const authenticateUser = (email, password, done) => {
     const user = getUserByEmail(email)
     if (user == null) {
@@ -22,5 +22,8 @@ export default function initialize(passport) {
       return done(e)
     }
   }
-  passport.use(new LocalStrategy( { usernameField: 'email'}), authenticateUser)
 }
+
+passport.use(new LocalStrategy( { usernameField: 'email'}), authenticateUser)
+
+exports
