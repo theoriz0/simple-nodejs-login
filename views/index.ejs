@@ -7,6 +7,9 @@
   <title>Document</title>
 </head>
 <body>
-  <%= name %>
+  <h1>hi, <%= name %></h1>
+  <form action="/logout?_method=DELETE" method="POST">
+    <button type="submit">Logout</button>
+  </form>
 </body>
 </html>

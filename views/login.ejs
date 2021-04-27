@@ -8,15 +8,18 @@
 </head>
 <body>
   <h1>Login</h1>
-  <form action="/register" method="POST">
-    <form-group>
+  <% if (messages.error) {%>
+    <%= messages.error %>
+  <% } %>
+  <form action="/login" method="POST">
+    <div>
       <label for="name">Email</label>
       <input required type="email" name="email" id="email" />
-    </form-group>
-    <form-group>
+    </div>
+    <div>
       <label for="password">Password</label>
       <input required type="password" name="password" id="password" />
-    </form-group>
+    </div>
     <button action="submit">Login</button>
   </form>
   <a href="/register">Register</a>
